@@ -5,8 +5,12 @@ class Lib:
         self.signup = signup
         self.ship_per_day = ship_per_day
 
-    def __str__(self):
-        print('\{id :{}\nsignup : {}\n spd : {}'.format(self.id, self.signup, self.ship_per_day))
-        print(' books_num : {}'.format(len(self.book_ids)))
-        print(' book_ids : ' + ' '.join(map(str, lib.book_ids)))
+    def __repr__(self):
+        return self.__str__()
 
+    def __str__(self):
+        string = '\nid :{}\n\tsignup : {}\n\tspd : {}\n'.format(self.id, self.signup, self.ship_per_day)
+        string += '\tbooks_num : {}'.format(len(self.book_ids))
+        string += '\tbook_ids : ' + ' '.join(map(str, self.book_ids))
+
+        return string
